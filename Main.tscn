@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://b821myv7hqira"]
+
+[ext_resource type="PackedScene" uid="uid://c7ighbnip0s51" path="res://Board/Board.tscn" id="1_glv2v"]
+[ext_resource type="PackedScene" uid="uid://cop8b0e1fvua8" path="res://Paddle/Paddle.tscn" id="3_r0du0"]
+[ext_resource type="PackedScene" uid="uid://dbjo7yyqa0rue" path="res://Ball/Ball.tscn" id="4_cm0pq"]
+
+[sub_resource type="Environment" id="Environment_r0du0"]
+background_mode = 1
+background_energy_multiplier = 0.1
+ambient_light_source = 2
+ambient_light_energy = 0.1
+glow_enabled = true
+glow_intensity = 0.8
+glow_bloom = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70u2g"]
+albedo_color = Color(0.79607844, 0.047058824, 0.6509804, 1)
+emission_enabled = true
+emission = Color(0.79607844, 0.047058824, 0.6509804, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r0du0"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_70u2g")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r0du0"]
+size = Vector3(5, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cm0pq"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_70u2g")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cm0pq"]
+size = Vector3(5, 1, 1)
+
+[node name="Main" type="Node3D" unique_id=2137797492]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1448354541]
+transform = Transform3D(1.2527795e-07, -1, 5.9604645e-08, -2.1855698e-08, 5.9604645e-08, 1, -1, -1.2527795e-07, -2.1855689e-08, 0, 11, 0)
+visible = false
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1337558112]
+environment = SubResource("Environment_r0du0")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=890655001]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 13, 0)
+
+[node name="Player 1" parent="." unique_id=2131648102 instance=ExtResource("3_r0du0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.5, 1, 0)
+up_action = "move_up_p1"
+down_action = "move_down_p1"
+
+[node name="MeshInstance3D" parent="Player 1" index="0" unique_id=1187720113]
+mesh = SubResource("BoxMesh_r0du0")
+
+[node name="CollisionShape3D" parent="Player 1" index="1" unique_id=243567013]
+shape = SubResource("BoxShape3D_r0du0")
+
+[node name="Player 2" parent="." unique_id=1734402305 instance=ExtResource("3_r0du0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 14.5, 1, 0)
+up_action = "move_up_p2"
+down_action = "move_down_p2"
+
+[node name="MeshInstance3D" parent="Player 2" index="0" unique_id=1187720113]
+mesh = SubResource("BoxMesh_cm0pq")
+
+[node name="CollisionShape3D" parent="Player 2" index="1" unique_id=243567013]
+shape = SubResource("BoxShape3D_cm0pq")
+
+[node name="Ball" parent="." unique_id=88711157 instance=ExtResource("4_cm0pq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Board" parent="." unique_id=875293261 instance=ExtResource("1_glv2v")]
+
+[editable path="Player 1"]
+[editable path="Player 2"]

@@ -1,13 +1,25 @@
 [gd_scene format=3 uid="uid://cop8b0e1fvua8"]
 
+[ext_resource type="Script" uid="uid://d22mnlqra4ca4" path="res://Paddle/paddle.gd" id="1_p46gg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70u2g"]
+albedo_color = Color(0.79607844, 0.047058824, 0.6509804, 1)
+emission_enabled = true
+emission = Color(0.79607844, 0.047058824, 0.6509804, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_70u2g"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_70u2g")
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_5wqg5"]
+size = Vector3(5, 1, 1)
 
-[node name="Node3D" type="Node3D" unique_id=2131648102]
+[node name="Paddle" type="CharacterBody3D" unique_id=1734402305]
+script = ExtResource("1_p46gg")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=39457966]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1187720113]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=243567013]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1187720113]
 transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_70u2g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=243567013]
 shape = SubResource("BoxShape3D_5wqg5")
