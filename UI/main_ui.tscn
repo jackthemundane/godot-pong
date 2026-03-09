@@ -1,0 +1,222 @@
+[gd_scene format=3 uid="uid://fstsg3xbgqhc"]
+
+[ext_resource type="Script" uid="uid://cru3yqgs1o0s5" path="res://UI/main_ui.gd" id="1_hvcg1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hvcg1"]
+font_size = 27
+
+[sub_resource type="LabelSettings" id="LabelSettings_qr26y"]
+font_size = 27
+
+[sub_resource type="LabelSettings" id="LabelSettings_u7gx0"]
+font_size = 40
+
+[node name="MainUI" type="CanvasLayer" unique_id=397035759]
+script = ExtResource("1_hvcg1")
+
+[node name="Score HUD" type="Control" parent="." unique_id=985647]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScoreLabel" type="Label" parent="Score HUD" unique_id=1715834325]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 12.0
+offset_bottom = 35.0
+grow_horizontal = 2
+text = "0-0"
+label_settings = SubResource("LabelSettings_hvcg1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Game Over HUD" type="Control" parent="." unique_id=1652657448]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="GameOver" type="Label" parent="Game Over HUD" unique_id=749543014]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -169.0
+offset_bottom = -132.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_qr26y")
+horizontal_alignment = 1
+
+[node name="PlayAgainButton" type="Button" parent="Game Over HUD" unique_id=1258506565]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = 27.0
+offset_right = 71.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 27
+text = "Play Again"
+
+[node name="ExitButton" type="Button" parent="Game Over HUD" unique_id=516704772]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = 81.0
+offset_right = 70.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 27
+text = "Exit Game"
+
+[node name="Countdown HUD" type="Control" parent="." unique_id=356571389]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CountdownLabel" type="Label" parent="Countdown HUD" unique_id=185584105]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 131.0
+offset_bottom = 154.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "3"
+label_settings = SubResource("LabelSettings_u7gx0")
+horizontal_alignment = 1
+
+[node name="Main Menu Hud" type="Control" parent="." unique_id=1509312062]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="Main Menu Hud" unique_id=1048202637]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -83.0
+offset_right = 78.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 27
+text = "Start Game"
+
+[node name="ExitButton" type="Button" parent="Main Menu Hud" unique_id=2029193974]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -15.5
+offset_right = 43.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 27
+text = "Exit Game
+"
+
+[node name="Pause HUD" type="Control" parent="." unique_id=1773611303]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResumeButton" type="Button" parent="Pause HUD" unique_id=947602051]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -80.0
+offset_right = 56.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 27
+text = "Resume"
+
+[node name="RestartButton" type="Button" parent="Pause HUD" unique_id=2051788807]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.5
+offset_top = -22.5
+offset_right = 51.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 27
+text = "Restart"
+
+[node name="ExitButton" type="Button" parent="Pause HUD" unique_id=1970617506]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = 34.0
+offset_right = 71.0
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 27
+text = "Exit Game"
+
+[connection signal="pressed" from="Game Over HUD/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="Game Over HUD/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Main Menu Hud/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Main Menu Hud/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Pause HUD/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Pause HUD/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Pause HUD/ExitButton" to="." method="_on_exit_button_pressed"]

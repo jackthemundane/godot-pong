@@ -13,6 +13,7 @@ material = SubResource("StandardMaterial3D_uk1te")
 [sub_resource type="SphereShape3D" id="SphereShape3D_ov5dl"]
 
 [node name="Ball" type="CharacterBody3D" unique_id=1840612415]
+visible = false
 script = ExtResource("1_cfgdn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1922070389]

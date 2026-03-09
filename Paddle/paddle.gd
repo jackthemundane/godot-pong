@@ -14,6 +14,9 @@ func _ready():
 		mesh.set_surface_override_material(0, mat.duplicate())
 
 func _physics_process(_delta):
+	if get_parent().is_paused:
+		return
+		
 	var direction = Input.get_axis(up_action, down_action)
 	
 	if direction:
