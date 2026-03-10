@@ -46,6 +46,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 1, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 1, 0)
 
 [node name="MainUI" parent="." unique_id=397035759 instance=ExtResource("6_3dxm6")]
+process_mode = 3
 
 [node name="Player1Paddle" parent="." unique_id=784644128 instance=ExtResource("3_r0du0")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15, 1, 0)

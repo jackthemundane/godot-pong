@@ -37,10 +37,10 @@ func play_countdown():
 	
 	for i in range(3, 0, -1):
 		countdown_label.text = str(i)
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(1.0, false).timeout
 	
 	countdown_label.text = "GO!"
-	await get_tree().create_timer(0.5).timeout    
+	await get_tree().create_timer(0.5, false).timeout    
 	countdown_hud.visible = false
 	countdown_finished.emit()
 
