@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dcvp2wt7rjm2f"]
 
 [ext_resource type="Script" uid="uid://ydf5tok0f1dc" path="res://Board/goal.gd" id="1_slhon"]
+[ext_resource type="AudioStream" uid="uid://qyyoaejtra3o" path="res://Assets/Sounds/Cartoon Sci-Fi Impact 18.wav" id="2_e8me2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bwrq4"]
 size = Vector3(1, 3, 16)
@@ -10,5 +11,8 @@ script = ExtResource("1_slhon")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=458610506]
 shape = SubResource("BoxShape3D_bwrq4")
+
+[node name="ScoreSound" type="AudioStreamPlayer" parent="." unique_id=780066413]
+stream = ExtResource("2_e8me2")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -2,6 +2,7 @@ extends Node3D
 
 @onready var ball = $Ball
 @onready var ui_manager = $MainUI
+@onready var player2_paddle = $Player2Paddle
 
 @export var target_score: int = 3
 
@@ -12,8 +13,6 @@ var is_paused: bool = false
 
 func _ready() -> void:
 	ui_manager.update_score(player1_score, player2_score)
-	await ui_manager.game_started
-	start_new_round()
 
 func _input(event):
 	if event.is_action_pressed("pause") and not is_game_over:
@@ -59,3 +58,12 @@ func start_new_round():
 func toggle_pause():
 	is_paused = !is_paused
 	ui_manager.show_pause_menu(is_paused)
+
+func _on_main_ui_start_single_player() -> void:
+	player2_paddle.is_ai = true
+	player2_paddle.ball = ball
+	start_new_round()
+
+func _on_main_ui_start_two_player() -> void:
+	player2_paddle.is_ai = false
+	start_new_round()

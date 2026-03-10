@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bey856lpmv31"
+path="res://.godot/imported/Zap, Blip (139), UI SFX, MGUSP1.wav-3dc7cf9f8016dcab003c6fb047a628b4.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Zap, Blip (139), UI SFX, MGUSP1.wav"
+dest_files=["res://.godot/imported/Zap, Blip (139), UI SFX, MGUSP1.wav-3dc7cf9f8016dcab003c6fb047a628b4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

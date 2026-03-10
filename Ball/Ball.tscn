@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dbjo7yyqa0rue"]
 
 [ext_resource type="Script" uid="uid://dc7nrxxgxejm6" path="res://Ball/ball.gd" id="1_cfgdn"]
+[ext_resource type="AudioStream" uid="uid://d0sdco4vc0jkl" path="res://Assets/Sounds/Cartoon Sci-Fi Interface Button 1.wav" id="2_ov5dl"]
+[ext_resource type="AudioStream" uid="uid://bey856lpmv31" path="res://Assets/Sounds/Zap, Blip (139), UI SFX, MGUSP1.wav" id="3_lwqi0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uk1te"]
 emission_enabled = true
@@ -15,6 +17,7 @@ material = SubResource("StandardMaterial3D_uk1te")
 [node name="Ball" type="CharacterBody3D" unique_id=1840612415]
 visible = false
 script = ExtResource("1_cfgdn")
+speed = 25.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1922070389]
 mesh = SubResource("SphereMesh_cfgdn")
@@ -25,3 +28,9 @@ shape = SubResource("SphereShape3D_ov5dl")
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1003013829]
 light_energy = 2.0
 omni_range = 3.0
+
+[node name="PaddleHitSound" type="AudioStreamPlayer" parent="." unique_id=1815508013]
+stream = ExtResource("2_ov5dl")
+
+[node name="WallHitSound" type="AudioStreamPlayer" parent="." unique_id=721761698]
+stream = ExtResource("3_lwqi0")

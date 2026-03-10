@@ -1,15 +1,130 @@
 [gd_scene format=3 uid="uid://fstsg3xbgqhc"]
 
 [ext_resource type="Script" uid="uid://cru3yqgs1o0s5" path="res://UI/main_ui.gd" id="1_hvcg1"]
+[ext_resource type="FontFile" uid="uid://c8ri7i8kj6o60" path="res://Assets/Fonts/Orbitron-Bold.ttf" id="2_qr26y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hvcg1"]
-font_size = 27
+font = ExtResource("2_qr26y")
+font_size = 45
+outline_size = 1
+outline_color = Color(1, 0.29803923, 1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qr26y"]
-font_size = 27
+font = ExtResource("2_qr26y")
+font_size = 45
+
+[sub_resource type="Theme" id="Theme_qr26y"]
+default_font = ExtResource("2_qr26y")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u7gx0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_afxui"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qr26y"]
+bg_color = Color(0.6, 0.12156863, 0.9490196, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c3pkt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pdhop"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u5gji"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d5wg"]
+bg_color = Color(0.6, 0.14117648, 0.98039216, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="LabelSettings" id="LabelSettings_u7gx0"]
-font_size = 40
+font = ExtResource("2_qr26y")
+font_size = 65
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_exncy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvq0b"]
+bg_color = Color(0.6, 0.14117648, 0.98039216, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qr26y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7gx0"]
+bg_color = Color(0.6, 0.14117648, 0.98039216, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ku8im"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c3pkt"]
+bg_color = Color(0.6, 0.14117648, 0.98039216, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0d5wg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_exncy"]
+bg_color = Color(0.6, 0.14117648, 0.98039216, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_afxui"]
+font = ExtResource("2_qr26y")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8occa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjj8c"]
+bg_color = Color(0.6, 0.14117648, 0.98039216, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gjj8c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s2xo5"]
+bg_color = Color(0.6, 0.14117648, 0.98039216, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s2xo5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5gji"]
+bg_color = Color(0.6, 0.14117648, 0.98039216, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="MainUI" type="CanvasLayer" unique_id=397035759]
 script = ExtResource("1_hvcg1")
@@ -27,8 +142,8 @@ grow_vertical = 2
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 12.0
-offset_bottom = 35.0
+offset_top = 3.0
+offset_bottom = 60.0
 grow_horizontal = 2
 text = "0-0"
 label_settings = SubResource("LabelSettings_hvcg1")
@@ -73,7 +188,13 @@ offset_right = 71.0
 offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_qr26y")
 theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u7gx0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_afxui")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qr26y")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_c3pkt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pdhop")
 text = "Play Again"
 
 [node name="ExitButton" type="Button" parent="Game Over HUD" unique_id=516704772]
@@ -89,7 +210,10 @@ offset_right = 70.0
 offset_bottom = 126.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_qr26y")
 theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u5gji")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0d5wg")
 text = "Exit Game"
 
 [node name="Countdown HUD" type="Control" parent="." unique_id=356571389]
@@ -123,21 +247,40 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="StartButton" type="Button" parent="Main Menu Hud" unique_id=1048202637]
+[node name="SinglePlayer" type="Button" parent="Main Menu Hud" unique_id=1061120993]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -101.0
+offset_top = 268.0
+offset_right = 101.0
+offset_bottom = 303.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_qr26y")
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxEmpty_exncy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cvq0b")
+text = "Single Player"
+
+[node name="TwoPlayers" type="Button" parent="Main Menu Hud" unique_id=1523094760]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -78.0
-offset_top = -83.0
-offset_right = 78.0
-offset_bottom = -38.0
+offset_left = -101.0
+offset_top = -20.0
+offset_right = 101.0
+offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_qr26y")
 theme_override_font_sizes/font_size = 27
-text = "Start Game"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qr26y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u7gx0")
+text = "Two Players"
 
 [node name="ExitButton" type="Button" parent="Main Menu Hud" unique_id=2029193974]
 layout_mode = 1
@@ -146,15 +289,45 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -43.5
-offset_top = -15.5
-offset_right = 43.5
-offset_bottom = 15.5
+offset_left = -75.0
+offset_top = 47.0
+offset_right = 76.0
+offset_bottom = 84.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_qr26y")
 theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ku8im")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c3pkt")
 text = "Exit Game
 "
+
+[node name="MainSoundButton" type="Button" parent="Main Menu Hud" unique_id=1825053830]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 409.0
+offset_right = 652.0
+offset_bottom = 444.0
+theme_override_fonts/font = ExtResource("2_qr26y")
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0d5wg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_exncy")
+text = "Sound: On"
+
+[node name="Instructions" type="Label" parent="Main Menu Hud" unique_id=637720260]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 139.0
+offset_bottom = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Use WASD or the arrow keys to move your paddle. ESC to pause."
+label_settings = SubResource("LabelSettings_afxui")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Pause HUD" type="Control" parent="." unique_id=1773611303]
 visible = false
@@ -178,7 +351,10 @@ offset_right = 56.0
 offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_qr26y")
 theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8occa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gjj8c")
 text = "Resume"
 
 [node name="RestartButton" type="Button" parent="Pause HUD" unique_id=2051788807]
@@ -194,7 +370,10 @@ offset_right = 51.5
 offset_bottom = 22.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_qr26y")
 theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gjj8c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s2xo5")
 text = "Restart"
 
 [node name="ExitButton" type="Button" parent="Pause HUD" unique_id=1970617506]
@@ -210,13 +389,31 @@ offset_right = 71.0
 offset_bottom = 79.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_qr26y")
 theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s2xo5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u5gji")
 text = "Exit Game"
+
+[node name="PauseSoundButton" type="Button" parent="Pause HUD" unique_id=448328216]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 409.0
+offset_right = 652.0
+offset_bottom = 444.0
+theme_override_fonts/font = ExtResource("2_qr26y")
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0d5wg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_exncy")
+text = "Sound: On"
 
 [connection signal="pressed" from="Game Over HUD/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
 [connection signal="pressed" from="Game Over HUD/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="pressed" from="Main Menu Hud/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Main Menu Hud/SinglePlayer" to="." method="_on_single_player_pressed"]
+[connection signal="pressed" from="Main Menu Hud/TwoPlayers" to="." method="_on_two_players_pressed"]
 [connection signal="pressed" from="Main Menu Hud/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Main Menu Hud/MainSoundButton" to="." method="_on_main_sound_button_pressed"]
 [connection signal="pressed" from="Pause HUD/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Pause HUD/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Pause HUD/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Pause HUD/PauseSoundButton" to="." method="_on_pause_sound_button_pressed"]

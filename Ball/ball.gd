@@ -2,6 +2,8 @@ extends CharacterBody3D
 
 @onready var mesh: MeshInstance3D = $MeshInstance3D
 @onready var impact_light: OmniLight3D = $OmniLight3D
+@onready var paddle_hit_sound: AudioStreamPlayer = $PaddleHitSound
+@onready var wall_hit_sound: AudioStreamPlayer = $WallHitSound
 
 @export var baseline_emission: float = 2.0
 @export var baseline_light: float = 0.5
@@ -26,6 +28,8 @@ func _physics_process(delta):
 		var collider = collision.get_collider()
 		
 		if "Paddle" in collider.name:
+			paddle_hit_sound.pitch_scale = randf_range(0.9, 1.1)
+			paddle_hit_sound.play()
 			var paddle_z = collider.global_position.z
 			var relative_hit_z = (global_position.z - paddle_z) / 2.5
 			
@@ -35,6 +39,11 @@ func _physics_process(delta):
 			
 			velocity_vector = new_direction * velocity_vector.length()
 			
+		elif "Wall" in collider.name:
+			wall_hit_sound.pitch_scale = randf_range(0.9, 1.1)
+			wall_hit_sound.play()
+			
+			velocity_vector = velocity_vector.bounce(collision.get_normal())
 		else:
 			velocity_vector = velocity_vector.bounce(collision.get_normal())
 

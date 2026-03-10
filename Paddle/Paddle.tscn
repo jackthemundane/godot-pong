@@ -20,15 +20,16 @@ proximity_fade_distance = 5.0
 [sub_resource type="BoxMesh" id="BoxMesh_70u2g"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_70u2g")
+size = Vector3(3, 0.5, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5wqg5"]
-size = Vector3(5, 1, 1)
+size = Vector3(3, 0.5, 0.5)
 
 [node name="Paddle" type="CharacterBody3D" unique_id=1734402305]
 script = ExtResource("1_p46gg")
+speed = 20.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1187720113]
-transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_70u2g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=243567013]

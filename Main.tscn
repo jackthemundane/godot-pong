@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bvxt17sqtjbpc" path="res://main.gd" id="1_fos0i"]
 [ext_resource type="PackedScene" uid="uid://c7ighbnip0s51" path="res://Board/Board.tscn" id="1_glv2v"]
+[ext_resource type="Script" uid="uid://cnquaddqlyrdw" path="res://camera_3d.gd" id="2_trn2v"]
 [ext_resource type="PackedScene" uid="uid://cop8b0e1fvua8" path="res://Paddle/Paddle.tscn" id="3_r0du0"]
 [ext_resource type="PackedScene" uid="uid://dbjo7yyqa0rue" path="res://Ball/Ball.tscn" id="4_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://dcvp2wt7rjm2f" path="res://Board/goal.tscn" id="4_fos0i"]
 [ext_resource type="PackedScene" uid="uid://fstsg3xbgqhc" path="res://UI/main_ui.tscn" id="6_3dxm6"]
+[ext_resource type="AudioStream" uid="uid://df7tbx0rxvcnv" path="res://Assets/Sounds/06_ChillwaveEDM_Loop.ogg" id="7_lgr22"]
 
 [sub_resource type="Environment" id="Environment_r0du0"]
 background_mode = 1
@@ -15,27 +17,6 @@ ambient_light_energy = 0.1
 glow_enabled = true
 glow_intensity = 0.8
 glow_bloom = 0.1
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70u2g"]
-albedo_color = Color(0.79607844, 0.047058824, 0.6509804, 1)
-emission_enabled = true
-emission = Color(0.79607844, 0.047058824, 0.6509804, 1)
-grow = true
-grow_amount = 0.05
-
-[sub_resource type="BoxMesh" id="BoxMesh_3dxm6"]
-resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_70u2g")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_r0du0"]
-size = Vector3(5, 1, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_lgr22"]
-resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_70u2g")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_cm0pq"]
-size = Vector3(5, 1, 1)
 
 [node name="Main" type="Node3D" unique_id=2137797492]
 script = ExtResource("1_fos0i")
@@ -51,28 +32,7 @@ environment = SubResource("Environment_r0du0")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=890655001]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 13, 0)
-
-[node name="Player 1" parent="." unique_id=2131648102 instance=ExtResource("3_r0du0")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.5, 1, 0)
-up_action = "move_up_p1"
-down_action = "move_down_p1"
-
-[node name="MeshInstance3D" parent="Player 1" index="0" unique_id=1187720113]
-mesh = SubResource("BoxMesh_3dxm6")
-
-[node name="CollisionShape3D" parent="Player 1" index="1" unique_id=243567013]
-shape = SubResource("BoxShape3D_r0du0")
-
-[node name="Player 2" parent="." unique_id=1734402305 instance=ExtResource("3_r0du0")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 14.5, 1, 0)
-up_action = "move_up_p2"
-down_action = "move_down_p2"
-
-[node name="MeshInstance3D" parent="Player 2" index="0" unique_id=1187720113]
-mesh = SubResource("BoxMesh_lgr22")
-
-[node name="CollisionShape3D" parent="Player 2" index="1" unique_id=243567013]
-shape = SubResource("BoxShape3D_cm0pq")
+script = ExtResource("2_trn2v")
 
 [node name="Ball" parent="." unique_id=88711157 instance=ExtResource("4_cm0pq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -87,8 +47,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 1, 0)
 
 [node name="MainUI" parent="." unique_id=397035759 instance=ExtResource("6_3dxm6")]
 
+[node name="Player1Paddle" parent="." unique_id=784644128 instance=ExtResource("3_r0du0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15, 1, 0)
+up_action = "move_up_p1"
+down_action = "move_down_p1"
+
+[node name="Player2Paddle" parent="." unique_id=1734402305 instance=ExtResource("3_r0du0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15, 1, 0)
+up_action = "move_up_p2"
+down_action = "move_down_p2"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=290149084]
+stream = ExtResource("7_lgr22")
+volume_db = -10.0
+autoplay = true
+
 [connection signal="goal_scored" from="Player1Goal" to="." method="_on_player_1_goal_goal_scored"]
 [connection signal="goal_scored" from="Player2Goal" to="." method="_on_player_2_goal_goal_scored"]
-
-[editable path="Player 1"]
-[editable path="Player 2"]
+[connection signal="start_single_player" from="MainUI" to="." method="_on_main_ui_start_single_player"]
+[connection signal="start_two_player" from="MainUI" to="." method="_on_main_ui_start_two_player"]
