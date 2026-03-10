@@ -9,41 +9,6 @@ font_size = 45
 outline_size = 1
 outline_color = Color(1, 0.29803923, 1, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_qr26y"]
-font = ExtResource("2_qr26y")
-font_size = 45
-
-[sub_resource type="Theme" id="Theme_qr26y"]
-default_font = ExtResource("2_qr26y")
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u7gx0"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_afxui"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qr26y"]
-bg_color = Color(0.6, 0.12156863, 0.9490196, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c3pkt"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pdhop"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u5gji"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d5wg"]
-bg_color = Color(0.6, 0.14117648, 0.98039216, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="LabelSettings" id="LabelSettings_u7gx0"]
-font = ExtResource("2_qr26y")
-font_size = 65
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_exncy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvq0b"]
@@ -99,6 +64,10 @@ expand_margin_bottom = 5.0
 [sub_resource type="LabelSettings" id="LabelSettings_afxui"]
 font = ExtResource("2_qr26y")
 
+[sub_resource type="LabelSettings" id="LabelSettings_u7gx0"]
+font = ExtResource("2_qr26y")
+font_size = 65
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8occa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjj8c"]
@@ -126,19 +95,51 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="LabelSettings" id="LabelSettings_qr26y"]
+font = ExtResource("2_qr26y")
+font_size = 45
+
+[sub_resource type="Theme" id="Theme_qr26y"]
+default_font = ExtResource("2_qr26y")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u7gx0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_afxui"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qr26y"]
+bg_color = Color(0.6, 0.12156863, 0.9490196, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c3pkt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pdhop"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u5gji"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d5wg"]
+bg_color = Color(0.6, 0.14117648, 0.98039216, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="MainUI" type="CanvasLayer" unique_id=397035759]
 script = ExtResource("1_hvcg1")
 
-[node name="Score HUD" type="Control" parent="." unique_id=985647]
+[node name="ScoreHUD" type="Control" parent="." unique_id=985647]
+unique_name_in_owner = true
 visible = false
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
 grow_horizontal = 2
-grow_vertical = 2
 
-[node name="ScoreLabel" type="Label" parent="Score HUD" unique_id=1715834325]
+[node name="ScoreLabel" type="Label" parent="ScoreHUD" unique_id=1715834325]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -150,7 +151,177 @@ label_settings = SubResource("LabelSettings_hvcg1")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Game Over HUD" type="Control" parent="." unique_id=1652657448]
+[node name="MainMenuHUD" type="Control" parent="." unique_id=1509312062]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuHUD" unique_id=972968766]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -88.5
+offset_bottom = 88.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SinglePlayer" type="Button" parent="MainMenuHUD/VBoxContainer" unique_id=1061120993]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_qr26y")
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxEmpty_exncy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cvq0b")
+text = "Single Player"
+
+[node name="TwoPlayers" type="Button" parent="MainMenuHUD/VBoxContainer" unique_id=1523094760]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_qr26y")
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qr26y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u7gx0")
+text = "Two Players"
+
+[node name="ExitButton" type="Button" parent="MainMenuHUD/VBoxContainer" unique_id=2029193974]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_qr26y")
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ku8im")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c3pkt")
+text = "Exit Game
+"
+
+[node name="MainSoundButton" type="Button" parent="MainMenuHUD/VBoxContainer" unique_id=1825053830]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_qr26y")
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0d5wg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_exncy")
+text = "Sound: On"
+
+[node name="Instructions" type="Label" parent="MainMenuHUD/VBoxContainer" unique_id=637720260]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Use WASD or the arrow keys to move your paddle. ESC to pause."
+label_settings = SubResource("LabelSettings_afxui")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CountdownHUD" type="Control" parent="." unique_id=356571389]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CountdownHUD" unique_id=1358337128]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer1" type="Control" parent="CountdownHUD/VBoxContainer" unique_id=1739582976]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer2" type="Control" parent="CountdownHUD/VBoxContainer" unique_id=264035568]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CountdownLabel" type="Label" parent="CountdownHUD/VBoxContainer" unique_id=185584105]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 6
+text = "3"
+label_settings = SubResource("LabelSettings_u7gx0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PauseHUD" type="Control" parent="." unique_id=1773611303]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseHUD" unique_id=521727431]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.5
+offset_top = -76.0
+offset_right = 75.5
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResumeButton" type="Button" parent="PauseHUD/VBoxContainer" unique_id=947602051]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_qr26y")
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8occa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gjj8c")
+text = "Resume"
+
+[node name="RestartButton" type="Button" parent="PauseHUD/VBoxContainer" unique_id=2051788807]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_qr26y")
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gjj8c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s2xo5")
+text = "Restart"
+
+[node name="PauseExitButton" type="Button" parent="PauseHUD/VBoxContainer" unique_id=1970617506]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_qr26y")
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s2xo5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u5gji")
+text = "Exit Game"
+
+[node name="PauseSoundButton" type="Button" parent="PauseHUD/VBoxContainer" unique_id=448328216]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_qr26y")
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0d5wg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_exncy")
+text = "Sound: On"
+
+[node name="GameOverHUD" type="Control" parent="." unique_id=1652657448]
+unique_name_in_owner = true
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -161,33 +332,32 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="GameOver" type="Label" parent="Game Over HUD" unique_id=749543014]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -169.0
-offset_bottom = -132.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Game Over"
-label_settings = SubResource("LabelSettings_qr26y")
-horizontal_alignment = 1
-
-[node name="PlayAgainButton" type="Button" parent="Game Over HUD" unique_id=1258506565]
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverHUD" unique_id=1906994081]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -71.0
-offset_top = 27.0
-offset_right = 71.0
-offset_bottom = 72.0
+offset_left = -80.5
+offset_top = -37.0
+offset_right = 80.5
+offset_bottom = 37.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="GameOver" type="Label" parent="GameOverHUD/VBoxContainer" unique_id=749543014]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Game Over"
+label_settings = SubResource("LabelSettings_qr26y")
+horizontal_alignment = 1
+
+[node name="PlayAgainButton" type="Button" parent="GameOverHUD/VBoxContainer" unique_id=1258506565]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
 theme = SubResource("Theme_qr26y")
 theme_override_font_sizes/font_size = 27
 theme_override_styles/normal = SubResource("StyleBoxEmpty_u7gx0")
@@ -197,223 +367,23 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_c3pkt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pdhop")
 text = "Play Again"
 
-[node name="ExitButton" type="Button" parent="Game Over HUD" unique_id=516704772]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -70.0
-offset_top = 81.0
-offset_right = 70.0
-offset_bottom = 126.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="GameOverExitButton" type="Button" parent="GameOverHUD/VBoxContainer" unique_id=516704772]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_qr26y")
 theme_override_font_sizes/font_size = 27
 theme_override_styles/normal = SubResource("StyleBoxEmpty_u5gji")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0d5wg")
 text = "Exit Game"
 
-[node name="Countdown HUD" type="Control" parent="." unique_id=356571389]
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="CountdownLabel" type="Label" parent="Countdown HUD" unique_id=185584105]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = 131.0
-offset_bottom = 154.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "3"
-label_settings = SubResource("LabelSettings_u7gx0")
-horizontal_alignment = 1
-
-[node name="Main Menu Hud" type="Control" parent="." unique_id=1509312062]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="SinglePlayer" type="Button" parent="Main Menu Hud" unique_id=1061120993]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -101.0
-offset_top = 268.0
-offset_right = 101.0
-offset_bottom = 303.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_qr26y")
-theme_override_font_sizes/font_size = 27
-theme_override_styles/normal = SubResource("StyleBoxEmpty_exncy")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cvq0b")
-text = "Single Player"
-
-[node name="TwoPlayers" type="Button" parent="Main Menu Hud" unique_id=1523094760]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -101.0
-offset_top = -20.0
-offset_right = 101.0
-offset_bottom = 25.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_qr26y")
-theme_override_font_sizes/font_size = 27
-theme_override_styles/normal = SubResource("StyleBoxEmpty_qr26y")
-theme_override_styles/hover = SubResource("StyleBoxFlat_u7gx0")
-text = "Two Players"
-
-[node name="ExitButton" type="Button" parent="Main Menu Hud" unique_id=2029193974]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -75.0
-offset_top = 47.0
-offset_right = 76.0
-offset_bottom = 84.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_qr26y")
-theme_override_font_sizes/font_size = 27
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ku8im")
-theme_override_styles/hover = SubResource("StyleBoxFlat_c3pkt")
-text = "Exit Game
-"
-
-[node name="MainSoundButton" type="Button" parent="Main Menu Hud" unique_id=1825053830]
-layout_mode = 0
-offset_left = 501.0
-offset_top = 409.0
-offset_right = 652.0
-offset_bottom = 444.0
-theme_override_fonts/font = ExtResource("2_qr26y")
-theme_override_font_sizes/font_size = 27
-theme_override_styles/normal = SubResource("StyleBoxEmpty_0d5wg")
-theme_override_styles/hover = SubResource("StyleBoxFlat_exncy")
-text = "Sound: On"
-
-[node name="Instructions" type="Label" parent="Main Menu Hud" unique_id=637720260]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = 139.0
-offset_bottom = 162.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Use WASD or the arrow keys to move your paddle. ESC to pause."
-label_settings = SubResource("LabelSettings_afxui")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Pause HUD" type="Control" parent="." unique_id=1773611303]
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ResumeButton" type="Button" parent="Pause HUD" unique_id=947602051]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -56.0
-offset_top = -80.0
-offset_right = 56.0
-offset_bottom = -35.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_qr26y")
-theme_override_font_sizes/font_size = 27
-theme_override_styles/normal = SubResource("StyleBoxEmpty_8occa")
-theme_override_styles/hover = SubResource("StyleBoxFlat_gjj8c")
-text = "Resume"
-
-[node name="RestartButton" type="Button" parent="Pause HUD" unique_id=2051788807]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -51.5
-offset_top = -22.5
-offset_right = 51.5
-offset_bottom = 22.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_qr26y")
-theme_override_font_sizes/font_size = 27
-theme_override_styles/normal = SubResource("StyleBoxEmpty_gjj8c")
-theme_override_styles/hover = SubResource("StyleBoxFlat_s2xo5")
-text = "Restart"
-
-[node name="ExitButton" type="Button" parent="Pause HUD" unique_id=1970617506]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -69.0
-offset_top = 34.0
-offset_right = 71.0
-offset_bottom = 79.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_qr26y")
-theme_override_font_sizes/font_size = 27
-theme_override_styles/normal = SubResource("StyleBoxEmpty_s2xo5")
-theme_override_styles/hover = SubResource("StyleBoxFlat_u5gji")
-text = "Exit Game"
-
-[node name="PauseSoundButton" type="Button" parent="Pause HUD" unique_id=448328216]
-layout_mode = 0
-offset_left = 501.0
-offset_top = 409.0
-offset_right = 652.0
-offset_bottom = 444.0
-theme_override_fonts/font = ExtResource("2_qr26y")
-theme_override_font_sizes/font_size = 27
-theme_override_styles/normal = SubResource("StyleBoxEmpty_0d5wg")
-theme_override_styles/hover = SubResource("StyleBoxFlat_exncy")
-text = "Sound: On"
-
-[connection signal="pressed" from="Game Over HUD/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
-[connection signal="pressed" from="Game Over HUD/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="pressed" from="Main Menu Hud/SinglePlayer" to="." method="_on_single_player_pressed"]
-[connection signal="pressed" from="Main Menu Hud/TwoPlayers" to="." method="_on_two_players_pressed"]
-[connection signal="pressed" from="Main Menu Hud/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="pressed" from="Main Menu Hud/MainSoundButton" to="." method="_on_main_sound_button_pressed"]
-[connection signal="pressed" from="Pause HUD/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="Pause HUD/RestartButton" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="Pause HUD/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="pressed" from="Pause HUD/PauseSoundButton" to="." method="_on_pause_sound_button_pressed"]
+[connection signal="pressed" from="MainMenuHUD/VBoxContainer/SinglePlayer" to="." method="_on_single_player_pressed"]
+[connection signal="pressed" from="MainMenuHUD/VBoxContainer/TwoPlayers" to="." method="_on_two_players_pressed"]
+[connection signal="pressed" from="MainMenuHUD/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="MainMenuHUD/VBoxContainer/MainSoundButton" to="." method="_on_main_sound_button_pressed"]
+[connection signal="pressed" from="PauseHUD/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="PauseHUD/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="PauseHUD/VBoxContainer/PauseExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="PauseHUD/VBoxContainer/PauseSoundButton" to="." method="_on_pause_sound_button_pressed"]
+[connection signal="pressed" from="GameOverHUD/VBoxContainer/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="GameOverHUD/VBoxContainer/GameOverExitButton" to="." method="_on_exit_button_pressed"]

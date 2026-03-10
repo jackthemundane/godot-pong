@@ -1,20 +1,19 @@
 extends CanvasLayer
 
-@onready var score_hud: Control = $"Score HUD"
-@onready var score_label: Label = $"Score HUD/ScoreLabel"
-@onready var game_over_menu: Control = $"Game Over HUD"
-@onready var winner_label: Label = $"Game Over HUD/GameOver"
-@onready var countdown_hud: Control = $"Countdown HUD"
-@onready var countdown_label: Label = $"Countdown HUD/CountdownLabel"
-@onready var main_menu_hud: Control = $"Main Menu Hud"
-@onready var two_players: Button = $"Main Menu Hud/TwoPlayers"
-@onready var exit_button: Button = $"Main Menu Hud/ExitButton"
-@onready var pause_hud: Control = $"Pause HUD"
-@onready var resume_button: Button = $"Pause HUD/ResumeButton"
-@onready var restart_button: Button = $"Pause HUD/RestartButton"
-@onready var pause_exit_button: Button = $"Pause HUD/ExitButton"
-@onready var main_sound_button: Button = $"Main Menu Hud/MainSoundButton"
-@onready var pause_sound_button: Button = $"Pause HUD/PauseSoundButton"
+@onready var score_hud: Control = %ScoreHUD
+@onready var score_label: Label = %ScoreLabel
+
+@onready var main_menu_hud: Control = %MainMenuHUD
+@onready var main_sound_button: Button = %MainSoundButton
+
+@onready var countdown_hud: Control = %CountdownHUD
+@onready var countdown_label: Label = %CountdownLabel
+
+@onready var pause_hud: Control = %PauseHUD
+@onready var pause_sound_button: Button = %PauseSoundButton
+
+@onready var game_over_hud: Control = %GameOverHUD
+@onready var game_over: Label = %GameOver
 
 var is_paused: bool = false
 
@@ -23,14 +22,14 @@ signal start_single_player
 signal start_two_player
 
 func _ready() -> void:
-	game_over_menu.visible = false
+	game_over_hud.visible = false
 
 func update_score(p1_score: int, p2_score: int):
 	score_label.text = str(p1_score) + " - " + str(p2_score)
 
 func show_game_over(winner_text: String):
-	winner_label.text = winner_text
-	game_over_menu.visible = true
+	game_over.text = winner_text
+	game_over_hud.visible = true
 	score_hud.visible = false
 
 func play_countdown():
